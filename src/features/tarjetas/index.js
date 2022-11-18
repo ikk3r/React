@@ -3,6 +3,12 @@ import { Avatar, Card ,Row,Col} from 'antd';
 import React, { useEffect, setState, Component, useState } from 'react';
 import axios from 'axios';
 import { Button, Modal } from 'antd';
+import {
+  DesktopOutlined,
+  FileOutlined,
+  PieChartOutlined,
+  UserOutlined,
+} from '@ant-design/icons'; 
 
 import './index.css';
 
@@ -116,7 +122,7 @@ const seleccionarProducto=(producto,caso)=>{
 return(
   <div className='App'>
 
-    <button onClick={()=>{abrirCerrarModalInsertar()}}>Insertar Producto Nuevo</button>
+    <FileOutlined onClick={()=>{abrirCerrarModalInsertar()}} />
     <div>
       <Row>
 

@@ -1,5 +1,6 @@
 import Tarjeta from '../tarjetas/index.js'
 
+
 import { Button } from 'antd';
 
 import {
@@ -28,24 +29,24 @@ function getItem(label, key, icon, children) {
 
 
 const items = [
-  getItem('Usuarios', '1', <UserOutlined />),
-  getItem('Productos', '2', <DesktopOutlined />),
-  getItem('Estadisticas', '3', <PieChartOutlined />),
-  getItem('Insertar Producto', '4', <FileOutlined></FileOutlined>),
+  getItem('Usuarios', '1', <UserOutlined href={'/Usuarios'} />),
+  getItem('Productos', '2', <DesktopOutlined href={'/Productos'} />),
+  getItem('Estadisticas', '3', <PieChartOutlined href={'/Estadisticas'} />),
+  getItem('Insertar Producto', '4', <Tarjeta />),
 ];
 
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed] = useState(true);
   return (
     <Layout
       style={{
         minHeight: '100vh',
       }}
     >
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+      <Sider collapsed={collapsed}>
         <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu theme="dark" mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
         <Header
@@ -67,7 +68,7 @@ const App = () => {
               minHeight: 360,
             }}
           >
-            <Tarjeta></Tarjeta>
+            
           </div>
         </Content>
         <Footer
